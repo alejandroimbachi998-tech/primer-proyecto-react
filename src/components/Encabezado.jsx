@@ -1,17 +1,15 @@
-import MenuUsuario from "./MenuUsuarios"
+import MenuUsuario from './MenuUsuario'
 
-function Encabezado(){
-    return(
-        <header className="encabezado">
-            <h1>Mi primer APP con React</h1>
-            <nav>
-                <a href='#'>Inicio</a>
-                <a href='#'>Tecnologías</a>
-                <a href='#'>Contacto</a>
-            </nav>
-            <MenuUsuario />
-
-        </header>
-    )
+function Encabezado({ usuario }) {
+  return (
+    <header className="encabezado">
+      <div className="encabezado-marca">
+        <span className="encabezado-logo">⚛️</span>
+        <h1>Mi Dashboard</h1>
+      </div>
+      <MenuUsuario usuario={usuario} />
+    </header>
+  )
 }
+
 export default Encabezado
