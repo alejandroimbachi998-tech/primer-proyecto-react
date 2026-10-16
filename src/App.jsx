@@ -13,7 +13,9 @@ function App() {
     nombre: 'Alejandro Imbachi',
     rol: 'Aprendiz ADSO',
     foto: fotoPerfil,
-    correo: 'alejandroimbachi998@gmail.com'
+    correo: 'alejandroimbachi998@gmail.com',
+    telefono: '+57 323 5068524',
+    ubicacion: 'Camilo Torres - Popayán - Cauca',
   }
 
   return (
@@ -23,7 +25,7 @@ function App() {
         <Sidebar usuario={usuario} />
         <main className="contenido"> 
           <h2>Bienvenido al Programa {programa}</h2>
-          <Presentacion />
+          <Presentacion usuario={usuario}/>
           <section className="tarjetas">
             <Tarjeta
               icono="⚛️"
