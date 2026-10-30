@@ -1,15 +1,16 @@
 import './App.css';
 import Encabezado from "./components/Encabezado";
 import Sidebar from "./components/Sidebar";
-import Presentacion from "./components/Presentacion";
-import Tarjeta from "./components/Tarjeta";
 import PiePagina from "./components/PiePagina";
-import fotoPerfil from './images/descarga.jpg'
+import fotoPerfil from './images/descarga.jpg';
+import Inicio from "./pages/Inicio";
+import Perfil from './pages/Perfil';
+import { Route, Routes } from 'react-router';
 
 function App() {
   const programa = "Analisis y Desarrollo de Software";
 
-  const usuario ={
+  const usuario = {
     nombre: 'Alejandro Imbachi',
     rol: 'Aprendiz ADSO',
     foto: fotoPerfil,
@@ -23,32 +24,11 @@ function App() {
       <Encabezado usuario={usuario} />
       <div className="app-layout">
         <Sidebar usuario={usuario} />
-        <main className="contenido"> 
-          <h2>Bienvenido al Programa {programa}</h2>
-          <Presentacion usuario={usuario}/>
-          <section className="tarjetas">
-            <Tarjeta
-              icono="⚛️"
-              titulo="React"
-              descripcion="Herramienta de javascript para construir interfaces con componentes"
-              horas={120}
-              destacada={true}
-            />            
-            <Tarjeta
-            icono="⚡"
-            titulo="Vite"
-            descripcion="Herramienta que crea, ejecuta y empaqueta el proyecto"
-            horas={60}
-            destacada={false}
-            />
-            <Tarjeta
-            icono="🔍"
-            titulo="ESLint"
-            descripcion="Revisa la calidad del código y encuentra errores"
-            horas={20}
-            destacada={false}
-            />
-          </section>
+        <main className="contenido">
+          <Routes>
+            <Route path="/" element={<Inicio usuario={usuario} programa={programa} />} />
+            <Route path="/perfil" element={<Perfil usuario={usuario} />} />
+          </Routes>
         </main>
       </div>
 
