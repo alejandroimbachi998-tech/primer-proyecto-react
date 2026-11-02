@@ -1,19 +1,19 @@
-import Presentacion from '../components/Presentacion';
-import Tarjeta from '../components/Tarjeta';
-import { tecnologias } from '../data/tecnologias';
+import { Link } from "react-router"
+function Inicio(){
+    const programa= 'Analisis y Desarrrollo de Software'
 
-function Inicio({ usuario, programa }) {
-  return (
-    <>
-      <h2>Bienvenido al programa {programa}</h2>
-      <Presentacion usuario={usuario} />
-      <section className="tarjetas" id="tecnologias" aria-label="Tecnologías">
-        {tecnologias.map((tecnologia) => (
-          <Tarjeta key={tecnologia.id} {...tecnologia} />
-        ))}
-      </section>
-    </>
-  );
+
+return(
+    <section>
+        <h2> Bienvenidos al programa {programa}</h2>
+        <p> Este es el dashboard de la competencia de fronted con React</p>
+        <p>
+            empieza por conocer <Link to ="/perfil"> mi perfil </Link>
+            o tambien revisa las {' '}
+            <Link to='/data/tecnologia'> Tecnologias </Link> que vamos a trabajar
+        </p>
+    </section>
+)
 }
 
-export default Inicio;
+export default Inicio

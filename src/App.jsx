@@ -28,6 +28,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Inicio usuario={usuario} programa={programa} />} />
             <Route path="/perfil" element={<Perfil usuario={usuario} />} />
+           
           </Routes>
         </main>
       </div>
